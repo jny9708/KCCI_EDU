@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Day2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  	<context-param>
+  		<param-name>LoginId</param-name>
+  		<param-value>test</param-value>
+  	</context-param>
+  	<context-param>
+  		<param-name>Password</param-name>
+  		<param-value>1234</param-value>
+	</context-param>  	
+  <servlet>
+  	<servlet-name>MyServlet1</servlet-name>
+  	<servlet-class>day2.MyServletEx1</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MyServlet1</servlet-name>
+  	<url-pattern>/MyServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
