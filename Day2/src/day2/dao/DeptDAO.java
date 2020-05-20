@@ -23,4 +23,13 @@ public class DeptDAO {
 		deptList.add(dept);
 	}
 	
+	public void delete(int id) {
+		for (Dept d : deptList) {
+			if(d.getId()==id) {
+				deptList.remove(d);
+				break;
+			}
+		}
+	}
+	
 }

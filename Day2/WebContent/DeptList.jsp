@@ -14,9 +14,13 @@
 <%
 	for(Dept d : deptList){
 		out.println(d.getId() + " : " + d.getDeptName());
+%>
+	<a href="DeptDelete?id=<%=d.getId()%>"> 삭제 </a>
+<% 
 		out.println("<br>");
 		out.println("-----------------------------<br>");
 	} 
 %>
+<a >추가</a>
 </body>
 </html>
