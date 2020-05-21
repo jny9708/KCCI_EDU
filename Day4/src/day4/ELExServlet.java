@@ -1,26 +1,28 @@
-package day3;
+package day4;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import day3.model.dao.DeptDAO;
-import day3.model.entity.Dept;
+import day4.ooad.MyBean;
 
-@WebServlet("/DeptList")
-public class DeptListServlet extends HttpServlet {
+/**
+ * Servlet implementation class ELExServlet
+ */
+@WebServlet("/ELExServlet")
+public class ELExServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DeptDAO deptDAO = DeptDAO.getInstance();
-		ArrayList<Dept> deptList = deptDAO.getAll();
-		request.setAttribute("deptList", deptList);
-		request.getRequestDispatcher("DeptList.jsp").forward(request, response);
+		MyBean bean = new MyBean();
+		bean.setId(30);
+		bean.setDeptName("행정팀");
+		bean.setLocId(500);
+		request.setAttribute("dept", bean);
+		request.getRequestDispatcher("ELEx3.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

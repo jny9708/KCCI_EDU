@@ -1,9 +1,15 @@
-package day3.model.entity;
+package day4.ooad;
 
-public class Dept {
+public class MyBean {
+
 	private int id;
-	private String deptName; 
-	private Integer locId;
+	private String deptName;
+	private int locId;
+	
+	public String getInfo() {
+		return id + " , " + deptName + " , " + locId;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -16,10 +22,11 @@ public class Dept {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-	public Integer getLocId() {
+	public int getLocId() {
 		return locId;
 	}
-	public void setLocId(Integer locId) {
+	public void setLocId(int locId) {
 		this.locId = locId;
 	}
+	
 }

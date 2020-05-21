@@ -20,14 +20,14 @@ public class DeptEditServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		Dept dept = new DeptDAO().getDept(id);
+		Dept dept = DeptDAO.getInstance().getDept(id);
 		request.setAttribute("dept", dept);
 		request.getRequestDispatcher("DeptEdit.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		DeptDAO deptDAO = new DeptDAO();
+		DeptDAO deptDAO = DeptDAO.getInstance();
 		Dept dept = new Dept();
 		int id = Integer.parseInt(request.getParameter("id"));
 		String deptName = request.getParameter("deptName");

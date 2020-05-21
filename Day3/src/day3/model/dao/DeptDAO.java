@@ -10,6 +10,19 @@ import day3.model.entity.Dept;
 
 public class DeptDAO {
 	
+	private static DeptDAO dao;
+	// 싱글톤 패턴
+	public static DeptDAO getInstance() {
+		if(dao == null) {
+			dao = new DeptDAO();		
+		}
+		return dao;
+	}
+	
+	// 이렇게하면 new를 사용할 수 없다고 한다
+	private DeptDAO() {
+		
+	}
 
 	public Dept getDept(int id) {
 		Dept dept = new Dept();
@@ -27,7 +40,8 @@ public class DeptDAO {
 			if(rs.next()) {
 				dept.setId(rs.getInt(1));
 				dept.setDeptName(rs.getString(2));
-				dept.setLocId(rs.getInt(3));
+				int locId = rs.getInt(3);
+				dept.setLocId(rs.wasNull() ? null : locId);
 			}
 		
 			if(rs != null) rs.close();

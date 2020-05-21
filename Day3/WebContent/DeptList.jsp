@@ -2,8 +2,9 @@
     pageEncoding="UTF-8"%>
     <%@page import="java.util.ArrayList"%>
     <%@page import="day3.model.entity.Dept"%>
-<!DOCTYPE html>
-<%  ArrayList<Dept> deptList = (ArrayList<Dept>)request.getAttribute("deptList"); %>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<!DOCTYPE html> 
+<%-- <%  ArrayList<Dept> deptList = (ArrayList<Dept>)request.getAttribute("deptList"); %> --%>
 <html>
 <head>
 
@@ -31,21 +32,17 @@
     	</thead>
     	
     	<tbody>
-    	<%
-	for(Dept d : deptList){
-	%>
+		<c:forEach items="${deptList}" var="d" >
     		<tr>
-	    		<th scope="row"><%=d.getId()%></td>
-	    		<td><%=d.getDeptName()%></td>
-	    		<td><%=d.getLocId()%></td>
+	    		<td scope="row"> ${d.id }</td>
+	    		<td> ${d.deptName }</td>
+	    		<td> ${d.locId }</td>
 	    		<td>
-	    			<a class="btn btn-primary" href="DeptEdit?id=<%=d.getId()%>"> 수정 </a>
-	    			<a class="btn btn-primary" href="DeptDelete?id=<%=d.getId()%>"> 삭제 </a>
+	    			<a class="btn btn-primary" href="DeptEdit?id=${d.id }"> 수정 </a>
+	    			<a class="btn btn-primary" href="DeptDelete?id=${d.id }"> 삭제 </a>
 				</td>
     		</tr>
-    	<% 	
-    		} 
-		%>
+    </c:forEach>
     	</tbody>
     	
     	

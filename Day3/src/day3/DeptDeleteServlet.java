@@ -19,7 +19,7 @@ public class DeptDeleteServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		DeptDAO deptDAO = new DeptDAO();
+		DeptDAO deptDAO = DeptDAO.getInstance();
 		deptDAO.Delete(id);
 		response.sendRedirect("DeptList");
 	}
