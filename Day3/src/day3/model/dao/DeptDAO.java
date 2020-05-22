@@ -38,10 +38,10 @@ public class DeptDAO {
 			rs = pstmt.executeQuery();
 
 			if(rs.next()) {
-				dept.setId(rs.getInt(1));
-				dept.setDeptName(rs.getString(2));
-				int locId = rs.getInt(3);
-				dept.setLocId(rs.wasNull() ? null : locId);
+				dept = new Dept();
+				dept.setId(rs.getInt("id"));
+				dept.setDeptName(rs.getString("dept_name"));
+				dept.setLocId(rs.getInt("loc_id"));
 			}
 		
 			if(rs != null) rs.close();
@@ -68,9 +68,10 @@ public class DeptDAO {
 
 			while(rs.next()) {
 				Dept dept = new Dept();
-				dept.setId(rs.getInt(1));
-				dept.setDeptName(rs.getString(2));
-				dept.setLocId(rs.getInt(3));
+				dept.setId(rs.getInt("id"));
+				dept.setDeptName(rs.getString("dept_name"));
+				int locId = rs.getInt("loc_id");
+				dept.setLocId(rs.wasNull() ? null : locId);
 				deptList.add(dept);
 			}
 		

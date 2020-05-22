@@ -21,17 +21,17 @@
 		<form action="DeptEdit" method="post">
 			<div class="form-group form-inline">
 				<div class="col-form-label col-2">부서아이디 : </div> 
-				<input disabled class="form-control col-10" type="text" name="id" value="${dept.id}"> 
+				<input  name="id" class=" form-control col-10" type="text"  value="${dept.id}" readonly> 
 			</div>
 			
 			<div class="form-group form-inline">  
 				<div class="col-form-label col-2">부서명 : </div> 
-				<input class="form-control col-10" type="text" name="deptName" value="${dept.deptName}">
+				<input class="form-control col-10" type="text" name="deptName" value="${dept.deptName}" >
 			</div>
 			
 			<div class="form-group form-inline" >  
 				<div class="col-form-label col-2">지역코드 : </div> 
-				<input class="form-control col-10" type="text" name="locId" value="${dept.locId}">
+				<input class="form-control col-10" type="text" name="locId" value="${dept.locId}" >
 			</div> 
 			 
 			<div class="form-group">

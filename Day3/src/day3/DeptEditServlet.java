@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import day3.model.dao.DeptDAO;
 import day3.model.entity.Dept;
 
-/**
- * Servlet implementation class DeptEditServlet
- */
 @WebServlet("/DeptEdit")
 public class DeptEditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
